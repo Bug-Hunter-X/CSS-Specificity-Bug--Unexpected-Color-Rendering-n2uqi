@@ -1,0 +1,25 @@
+To resolve the specificity issue, ensure the selector with the intended style has higher specificity.
+
+Here's a corrected version:
+
+```css
+div p {
+  color: blue !important; /*Use !important carefully*/
+}
+p {
+  color: red;
+}
+```
+
+Alternatively, adjust the structure to avoid specificity conflicts or be more explicit with selectors:
+
+```css
+.specific-paragraph {
+  color: red;
+}
+div .specific-paragraph {
+  color: blue;
+}
+```
+
+By using a class, we ensure the intended style has precedence.  Always prefer structural adjustments to `!important` for better maintainability.
